@@ -53,21 +53,17 @@ namespace MusicLibrary.Tests
       Assert.AreEqual(newArtist2, result);
     }
 
-    // [TestMethod]
-  //   public void AddItem_AssociatesItemWithCategory_ItemList()
-  //   {
-  //     //Arrange
-  //     string description = "Walk the dog.";
-  //     Item newItem = new Item(description);
-  //     List<Item> newList = new List<Item> { newItem };
-  //     string name = "Cher";
-  //     Artist newCategory = new Artist(name);
-  //     newCategory.AddItem(newItem);
-
-  //     //Act
-  //     List<Item> result = newCategory.Items;
-
-  //     //Assert
-  //     CollectionAssert.AreEqual(newList, result);
+    [TestMethod]
+    public void AddItem_AssociatesItemWithCategory_ItemList()
+    {
+      string album = "Illmatic";
+      Album newAlbum = new Album(album);
+      List<Album> newList = new List<Album> { newAlbum };
+      string artist = "Nas";
+      Artist newArtist = new Artist(artist);
+      newArtist.AddAlbum(newAlbum);
+      List<Album> result = newArtist.Albums;
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }

@@ -6,14 +6,14 @@ namespace MusicLibrary.Models
   {
     public string Name { get; set; }
     public int Id { get; }
-    // public List<Album> Albums { get; set; }
+    public List<Album> Albums { get; set; }
     private static List<Artist> _instances = new List<Artist> { };
     public Artist(string name)
     {
       Name = name;
       _instances.Add(this);
       Id = _instances.Count;
-      // Albums = new List<Album>{};
+      Albums = new List<Album>{};
     }
 
     public static void RemoveAll()
@@ -31,9 +31,9 @@ namespace MusicLibrary.Models
       return _instances[searchId - 1];
     }
 
-    // public void AddAlbum(Album album)
-    // {
-    //   Albums.Add(album);
-    // }
+    public void AddAlbum(Album album)
+    {
+      Albums.Add(album);
+    }
   }
 }
