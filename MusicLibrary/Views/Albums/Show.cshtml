@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+<div>
+@if (Model["album"].Count == 0)
+{
+  <h3>You'll need to add an album first.</h3>
+  <a href='/artists/@Model["artist"].Id/albums/new'>Add an album</a>
+}
+else 
+{
+  <h2>@Model["album"].AlbumTitle</h2>
+  <h3>Artist: @Model["artist"].Name</h3>
+  <a href='/artists/@Model["artist"].Id/albums/new'>Add another album</a>
+}
+</div>

@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+@using MusicLibrary.Models
+
+  <h3>Here are all the albums added for this artist</h3>
+
+<ol>
+  @foreach (Album album in @Model["album"])
+  {
+    <li><a href='/artists/@Model["artist"].Id/album/@album.Id'>@album.AlbumTitle</a></li>
+  }
+  <p><a href='/artists/@Model["artist"].Id/albums/new'>Add a new album!</a></p>
+</ol>

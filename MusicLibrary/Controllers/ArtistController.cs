@@ -35,7 +35,7 @@ namespace MusicLibrary.Controllers
       List<Album> artistAlbums = selectedArtist.Albums;
       model.Add("artist", selectedArtist);
       model.Add("album", artistAlbums);
-      return View();
+      return View(model);
     }
 
     [HttpPost("/artists/{artistId}/album")]
